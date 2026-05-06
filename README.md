@@ -28,5 +28,5 @@ Multiple hovered or pinned countries can be compared from the same origin, which
 
 Your phone and computer must be on the same Wi-Fi network.
 
-Run the helper script from the repo root: `serve_mobile.bat`
+Run the helper script from the repo root: `dev\serve_mobile.bat`
 Follow the console output instructions to open on your mobile device.

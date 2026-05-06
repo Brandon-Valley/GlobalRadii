@@ -2,14 +2,13 @@
 setlocal EnableExtensions EnableDelayedExpansion
 
 rem ============================================================
-rem serve_mobile_fixed.bat
+rem serve_mobile.bat
 rem
-rem Put this file in your repo root:
-rem   C:\p\global_rad
+rem This script lives in:
+rem   <repo>\dev\serve_mobile.bat
 rem
-rem This version fixes the most common "works locally but times
-rem out on my phone" problem by adding a Windows Defender Firewall
-rem inbound rule for TCP port 8000.
+rem It serves the repo root over your local network and adds a
+rem Windows Defender Firewall inbound rule for TCP port 8000.
 rem
 rem It will ask for Administrator permission because Windows
 rem requires admin rights to add firewall rules.
@@ -17,7 +16,7 @@ rem ============================================================
 
 set "PORT=8000"
 set "RULE_NAME=global_rad local dev server port 8000"
-set "ROOT_DIR=%~dp0"
+for %%I in ("%~dp0..") do set "ROOT_DIR=%%~fI"
 
 rem ------------------------------------------------------------
 rem Re-run this script as Administrator if needed.
@@ -39,7 +38,7 @@ cd /d "%ROOT_DIR%"
 
 echo.
 echo ============================================================
-echo Global Rad Mobile Test Server
+echo GlobalRadii Mobile Test Server
 echo ============================================================
 echo.
 echo Running as Administrator: YES
